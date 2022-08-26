@@ -1,8 +1,8 @@
 # SciFi UI Project
 
-Name:
+Name: Fuad Godzhaev
 
-Student Number: 
+Student Number: D20124630
 
 Fork this repository and use it a starter project for your assignment
 

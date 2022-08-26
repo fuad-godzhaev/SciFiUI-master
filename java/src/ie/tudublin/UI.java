@@ -5,7 +5,8 @@ import processing.core.PApplet;
 public class UI extends PApplet
 {
     Button b;
-    MovingCircle mc;
+    Radar radar;
+    StatusBar sb;
 
     boolean[] keys = new boolean[1024];
 
@@ -27,35 +28,28 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(800, 800);
-        // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen(P3D); 
+        //size(800, 800);
+        //Use fullscreen instead of size to make your interface fullscreen
+        fullScreen(); 
     }
 
     public void setup()
     {
-        b = new Button(this, 50, 50, 100, 50, "I am a button");
-        mc = new MovingCircle(this, width / 2, height * .75f, 50);
+        b = new Button(this, -70, 600);
         radar = new Radar(this, 1, width / 2, height / 2, 100);
+        sb = new StatusBar(this, -80, 650);
     }
-
-    Radar radar;
 
     public void draw()
     {
-        background(0);
+        background(255, 255, 255);
         b.render();
-
-        mc.update();
-        mc.render();
 
         radar.update();
         radar.render();
 
-        if (checkKey(LEFT))
-        {
-            System.out.println("Left arrow key pressed");
-        }
+        sb.update();
+        sb.render();
     }
 }
 
